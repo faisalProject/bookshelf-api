@@ -29,8 +29,8 @@ const insertBook = (request, h) => {
   finished = readPage === pageCount;
 
   const id = nanoid(16);
-  const createdAt = new Date().toISOString();
-  const updatedAt = createdAt;
+  const insertedAt = new Date().toISOString();
+  const updatedAt = insertedAt;
 
   const newBook = {
     id,
@@ -43,7 +43,7 @@ const insertBook = (request, h) => {
     readPage,
     reading,
     finished,
-    createdAt,
+    insertedAt,
     updatedAt,
   };
   books.push(newBook);
