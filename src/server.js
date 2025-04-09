@@ -1,16 +1,17 @@
-import Hapi from '@hapi/hapi'
-import routes from './routes.js'
+import Hapi from '@hapi/hapi';
+import routes from './routes.js';
 
 const init = async () => {
   const server = Hapi.server({
     port: 9000,
-    host: 'localhost'
-  })
+    host: 'localhost',
+  });
 
-  server.route(routes)
+  server.route(routes);
 
-  await server.start()
-  console.log(`Server berjalan pada ${server.info.uri}`)
-}
+  await server.start();
+  /* eslint-disable-next-line no-console */
+  console.log(`Server sedang berjalan di ${server.info.uri}`);
+};
 
-init()
+init();
